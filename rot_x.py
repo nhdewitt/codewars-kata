@@ -6,6 +6,3 @@ def rot_x(st, rot):
     chr((ord(c) - 65 + rot) % 26 + 65) if c in ascii_letters and c.isupper() else c
     for c in st
 )
-
-
-rot_x("A man, a plan, a canal: Panama")
