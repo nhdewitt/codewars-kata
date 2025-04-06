@@ -109,6 +109,6 @@ def fruit(reels, spins):
         if "Wild" in result and result.count("Wild") == 1:
             return values[sorted(result)[0]] * 2                                        # 1 wild, sorted, "Wild" will be at the end, grab [0] to get the matching pair, multiply by 2
         if "Wild" in result and result.count("Wild") == 2:
-            return values["Wild"]
+            return values["Wild"]                                                       # 2 wild, return Wild value
         return values[[item for item in set(result) if result.count(item) == 2][0]]     # no wild, find the matching pair and return the value
     return 0                                                                            # if set len=3, no match, return 0
