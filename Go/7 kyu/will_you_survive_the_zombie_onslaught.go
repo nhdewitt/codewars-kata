@@ -27,9 +27,9 @@ func Zombie_shootout(zombies, initial_range, ammo int) string {
     if ammo == 0 {
       return fmt.Sprintf("You shot %d zombies before being eaten: ran out of ammo.", killedZombies)
     }
-    ammo -= 1
-    killedZombies += 1
-    zombies -= 1
+    ammo--
+    killedZombies++
+    zombies--
     rng -= 0.5
     if zombies == 0 {
       return fmt.Sprintf("You shot all %d zombies.", killedZombies)
