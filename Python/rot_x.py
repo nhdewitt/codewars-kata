@@ -1,8 +1,9 @@
-from string import ascii_letters
+from string import ascii_lowercase, ascii_uppercase
 
 def rot_x(st, rot):
-    return "".join(
-    chr((ord(c) - 97 + rot) % 26 + 97) if c in ascii_letters and c.islower() else
-    chr((ord(c) - 65 + rot) % 26 + 65) if c in ascii_letters and c.isupper() else c
-    for c in st
-)
+    alpha = ascii_lowercase + ascii_uppercase
+    if rot > 26:
+        rot %= 26
+    rot_chars = ascii_lowercase[rot:] + ascii_lowercase[:rot] + ascii_uppercase[rot:] + ascii_uppercase[:rot]
+    shift = str.maketrans(alpha, rot_chars)
+    return st.translate(shift)
