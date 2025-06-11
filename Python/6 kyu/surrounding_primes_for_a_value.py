@@ -39,13 +39,13 @@ class Sieve:
         
         limit = int(math.sqrt(self.limit))
         
-        for i in range(2, self.limit + 1):
+        for i in range(2, limit + 1):
             if self.is_composite[i]:
                 continue
             for j in range(i * i, self.limit + 1, i):
                 self.is_composite[j] = True
                 
-        for i in range(2, self.limit):
+        for i in range(2, self.limit + 1):
             if not self.is_composite[i]:
                 self.primes.append(i)
     
