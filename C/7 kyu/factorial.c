@@ -15,3 +15,22 @@ int factorial(int n) {
     prod *= n--;
   return prod;
 }
+
+/*
+Your task is to write function factorial.
+
+https://en.wikipedia.org/wiki/Factorial
+
+https://www.codewars.com/kata/57a049e253ba33ac5e000212/train/c
+*/
+
+unsigned __int128 factorial(unsigned n)
+{
+  unsigned __int128 prod = 1;
+  while (n > 0)
+  {
+    prod *= n;
+    n--;
+  }
+  return prod;
+}
