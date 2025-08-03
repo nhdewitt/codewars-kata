@@ -1,0 +1,38 @@
+"""
+In mathematics, Pascal's triangle is a triangular array of the binomial coefficients expressed with formula
+
+(nk)=n!k!(n−k)!(kn​)=k!(n−k)!n!​
+ 
+where n denotes a row of the triangle, and k is a position of a term in the row.
+
+Pascal's Triangle
+
+You can read Wikipedia article on Pascal's Triangle for more information.
+
+Task
+Write a function that, given a depth n, returns n top rows of Pascal's Triangle flattened into a one-dimensional list/array.
+
+Example:
+n = 1: [1]
+n = 2: [1,  1, 1]
+n = 4: [1,  1, 1,  1, 2, 1,  1, 3, 3, 1]
+
+
+https://www.codewars.com/kata/5226eb40316b56c8d500030f/train/python
+"""
+
+def pascals_triangle(n):
+    res = [1]
+    previous = [1]
+    
+    for m in range(2, n + 1):
+        current = [1]
+        
+        for i in range(len(previous) - 1):
+            current.append(previous[i] + previous[i + 1])
+        
+        current.append(1)
+        res.extend(current)
+        previous = current
+    
+    return res
